@@ -6,21 +6,18 @@
     <title>Book Name</title>
 
     <style>
-        table, th, td {
-            border: 1px solid rgb(0, 0, 0);
-            border-collapse: collapse;
-        }
-
-        th, td {
-            background-color: #18c680;
-        }
         @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
 
         * {
-         font-family: 'Poppins', sans-serif;
+            font-family: 'Poppins', sans-serif;
+            box-sizing: border-box;
         }
-        
-        .mainBAGROUND   {
+
+        body {
+            margin: 0;
+        }
+
+        .mainBackground {
             background-color: #4a954e;
         }
 
@@ -69,33 +66,117 @@
             text-decoration: none;
             font-size: 17px;
         }
+
+        .page-wrapper {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 24px;
+        }
+
+        .details-grid {
+            display: grid;
+            grid-template-columns: 260px 1fr;
+            gap: 24px;
+            background-color: #18c680;
+            border-radius: 12px;
+            padding: 24px;
+            color: #0b2d16;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+        }
+
+        .details-grid img {
+            width: 100%;
+            border-radius: 8px;
+        }
+
+        .detail-list {
+            list-style: none;
+            padding: 0;
+            margin: 16px 0 0 0;
+        }
+
+        .detail-list li {
+            display: flex;
+            justify-content: space-between;
+            padding: 6px 0;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+        }
+
+        .detail-list li:last-child {
+            border-bottom: none;
+        }
+
+        .summary-card {
+            margin-top: 24px;
+            background-color: #0f6e3f;
+            border-radius: 12px;
+            padding: 20px;
+            color: white;
+        }
+
+        .summary-card h2 {
+            margin-top: 0;
+        }
+
+        .barcode-badge {
+            display: inline-block;
+            padding: 6px 12px;
+            border-radius: 999px;
+            background-color: #126016;
+            color: #f2f2f2;
+            font-size: 14px;
+            margin-left: 8px;
+        }
     </style>
 </head>
 
-<body class="mainBaground">
+<body class="mainBackground">
     <div class="topnav">
-          <center><h1 class="whiteText">LIBREN WEB TEST</h1></center>        
+          <center><h1 class="whiteText">LIBREN School Library System</h1></center>
     </div>
 
-    <table border="2">
-        <tr>
-            <td><center><b><a class="whiteText">Book Name</a></b></td></center>
-            <td rowspan="3" class="whiteText"><b>
-Nunc quis lacinia sem, sed commodo sem. Quisque aliquam sagittis pharetra. Donec vehicula est nisi, ut auctor orci faucibus ac. Ut dictum nunc ac ipsum fringilla tristique. Donec posuere sodales risus, eu accumsan diam tincidunt in. Praesent rutrum turpis nunc, sed condimentum massa imperdiet at. Morbi vestibulum vulputate urna, at efficitur tortor volutpat ut.
+    <div class="page-wrapper">
+        <div class="details-grid">
+            <div>
+                <img src="book.jpg" alt="Book Name cover">
+                <ul class="detail-list">
+                    <li><span>Barcode</span><strong>LIB-2024-00021</strong></li>
+                    <li><span>Category</span><strong>Literature</strong></li>
+                    <li><span>Grade Level</span><strong>6-7</strong></li>
+                    <li><span>Shelf</span><strong>A2</strong></li>
+                </ul>
+            </div>
+            <div>
+                <h2>Book Name <span class="barcode-badge">Back Barcode Registered</span></h2>
+                <p>
+                    Nunc quis lacinia sem, sed commodo sem. Quisque aliquam sagittis pharetra. Donec vehicula est
+                    nisi, ut auctor orci faucibus ac. Ut dictum nunc ac ipsum fringilla tristique. Donec posuere
+                    sodales risus, eu accumsan diam tincidunt in. Praesent rutrum turpis nunc, sed condimentum
+                    massa imperdiet at. Morbi vestibulum vulputate urna, at efficitur tortor volutpat ut.
+                </p>
+                <p>
+                    Vestibulum vulputate viverra placerat. Nam sagittis quam ac ultrices laoreet. In varius purus id
+                    justo pretium imperdiet. Duis suscipit mi quis urna consequat, ut dictum turpis dapibus. Proin
+                    efficitur justo vitae justo scelerisque aliquet. Donec id tempus lorem. Vivamus mi nunc, dignissim
+                    at purus at, ornare vulputate ligula.
+                </p>
+                <ul class="detail-list">
+                    <li><span>Status</span><strong>Available</strong></li>
+                    <li><span>Last Scan</span><strong>09:12 AM</strong></li>
+                    <li><span>Checked out to</span><strong>None</strong></li>
+                    <li><span>Condition</span><strong>Good</strong></li>
+                </ul>
+            </div>
+        </div>
 
-Vestibulum vulputate viverra placerat. Nam sagittis quam ac ultrices laoreet. In varius purus id justo pretium imperdiet. Duis suscipit mi quis urna consequat, ut dictum turpis dapibus. Proin efficitur justo vitae justo scelerisque aliquet. Donec id tempus lorem. Vivamus mi nunc, dignissim at purus at, ornare vulputate ligula. Ut volutpat nunc a euismod lobortis. Etiam pulvinar consectetur dolor ut scelerisque. Nunc sodales elit mi, at faucibus leo facilisis vel. Sed eget nulla maximus nisl placerat condimentum.
-
-Pellentesque vitae diam et leo finibus cursus id venenatis tortor. Nam viverra, quam ut vestibulum eleifend, urna tellus lacinia est, nec finibus magna nunc in nisi. Curabitur porttitor rhoncus neque nec bibendum. Vestibulum faucibus fringilla ultricies. Praesent at feugiat leo. Aliquam vestibulum pellentesque lectus, a condimentum tellus laoreet id. Nunc et felis tortor. Duis malesuada neque et enim congue, ut rutrum diam lacinia. Donec libero eros, cursus at ante quis, molestie pellentesque orci. Curabitur a ipsum blandit, consequat nibh et, sagittis turpis. Aenean eget mauris hendrerit, consectetur est eu, congue metus. Donec in augue tellus. In tellus purus, tempus in risus non, lobortis pretium nulla. Phasellus volutpat, justo convallis fringilla maximus, tortor sem tincidunt mauris, at mollis purus velit eget felis. Vivamus sed augue fringilla ante porttitor pulvinar. Vestibulum id ex at quam efficitur pharetra ac in turpis. 
-            </b></td>
-        </tr>
-
-        <tr>
-            <td><img src="book.jpg" width="220" height="250"></td>
-        </tr>
-
-        <tr>
-            <td rowspan="2"><center><b><a class="whiteText">Availability=00 (not set)</a></b></td></td>
-        </tr>
-    </table>
+        <section class="summary-card">
+            <h2>Barcode System Notes</h2>
+            <p>
+                This book is linked to barcode <strong>LIB-2024-00021</strong> printed on the back cover.
+                The system tracks scans, borrow history, and current availability for school staff.
+            </p>
+            <a href="web.html" class="button button1">Back to system</a>
+        </section>
+    </div>
 </body>
 </html>

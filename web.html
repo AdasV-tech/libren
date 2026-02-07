@@ -6,21 +6,18 @@
     <title>LIBREN</title>
 
     <style>
-        table, th, td {
-            border: 1px solid rgb(0, 0, 0);
-            border-collapse: collapse;
-        }
-
-        th, td {
-            background-color: #18c680;
-        }
         @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
 
         * {
-         font-family: 'Poppins', sans-serif;
+            font-family: 'Poppins', sans-serif;
+            box-sizing: border-box;
         }
-        
-        .mainBAGROUND  {
+
+        body {
+            margin: 0;
+        }
+
+        .mainBackground {
             background-color: #4a954e;
         }
 
@@ -69,45 +66,199 @@
             text-decoration: none;
             font-size: 17px;
         }
+
+        .page-wrapper {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 24px;
+        }
+
+        .card {
+            background-color: #0f6e3f;
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 24px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+        }
+
+        .card h2 {
+            margin-top: 0;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 20px;
+        }
+
+        .book-card {
+            background-color: #18c680;
+            border-radius: 12px;
+            padding: 16px;
+            text-align: center;
+            color: #0b2d16;
+        }
+
+        .book-card img {
+            width: 100%;
+            max-width: 200px;
+            height: auto;
+        }
+
+        .metadata {
+            list-style: none;
+            padding: 0;
+            margin: 12px 0 0 0;
+            text-align: left;
+        }
+
+        .metadata li {
+            display: flex;
+            justify-content: space-between;
+            padding: 4px 0;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+        }
+
+        .metadata li:last-child {
+            border-bottom: none;
+        }
+
+        .barcode-input {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+            margin-top: 12px;
+        }
+
+        .barcode-input input {
+            flex: 1;
+            min-width: 240px;
+            padding: 12px 16px;
+            border-radius: 8px;
+            border: 2px solid #0b2d16;
+        }
+
+        .system-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 16px;
+        }
+
+        .system-table th,
+        .system-table td {
+            padding: 12px;
+            border: 1px solid #0b2d16;
+            background-color: #18c680;
+            text-align: left;
+            color: #0b2d16;
+        }
+
+        .tag {
+            display: inline-block;
+            padding: 4px 8px;
+            border-radius: 999px;
+            background-color: #126016;
+            color: #f2f2f2;
+            font-size: 12px;
+            margin-left: 8px;
+        }
     </style>
 </head>
 
-<body class="mainBaground">
+<body class="mainBackground">
     <div class="topnav">
-          <center><h1 class="whiteText">LIBREN WEB TEST</h1></center>        
+          <center><h1 class="whiteText">LIBREN School Library System</h1></center>
     </div>
 
-    <table border="2" style="text-align: center;">
-        <tr>
-            <td class="whiteText" colspan="2">Book name 1</td>
-            <td class="whiteText" colspan="2">Book name 2</td>
-        </tr>
+    <div class="page-wrapper">
+        <section class="card whiteText">
+            <h2>Barcode Registration Center</h2>
+            <p>
+                Every book has a barcode on the back. Scan it to pull the book record, update availability,
+                or assign it to a student.
+            </p>
+            <div class="barcode-input">
+                <input type="text" placeholder="Scan or type barcode ID (e.g., LIB-2024-00087)">
+                <button class="button button1">Lookup barcode</button>
+                <button class="button button1">Register new book</button>
+            </div>
+        </section>
 
-        <tr>
-            <td colspan="2">
-                <img src="book.jpg" width="220" height="250" alt="Book 1">
-            </td>
+        <section class="card whiteText">
+            <h2>School Collection Overview</h2>
+            <div class="grid">
+                <div class="book-card">
+                    <h3>Book name 1</h3>
+                    <img src="book.jpg" alt="Book 1">
+                    <ul class="metadata">
+                        <li><span>Barcode</span><strong>LIB-2024-00021</strong></li>
+                        <li><span>Status</span><strong>Available</strong></li>
+                        <li><span>Location</span><strong>Grade 6 / Shelf A2</strong></li>
+                    </ul>
+                    <a href="abtBook.html" class="button button1">About this book...</a>
+                </div>
 
-            <td colspan="2">
-                <img src="book.jpg" width="220" height="250" alt="Book 2">
-            </td>
-        </tr>
+                <div class="book-card">
+                    <h3>Book name 2</h3>
+                    <img src="book.jpg" alt="Book 2">
+                    <ul class="metadata">
+                        <li><span>Barcode</span><strong>LIB-2024-00022</strong></li>
+                        <li><span>Status</span><strong>Checked out</strong></li>
+                        <li><span>Location</span><strong>Grade 8 / Shelf C1</strong></li>
+                    </ul>
+                    <a href="abtBook.html" class="button button1">About this book...</a>
+                </div>
 
-        <tr>
-            <td>
-               <a href="" class="button button1">About this book...</a>
-            </td>
-            <td class="whiteText">
-                <a>Availability=00 <p>(NOT SET)</p></a>
-            </td>
+                <div class="book-card">
+                    <h3>Science Explorers</h3>
+                    <img src="book.jpg" alt="Science Explorers">
+                    <ul class="metadata">
+                        <li><span>Barcode</span><strong>LIB-2024-00023</strong></li>
+                        <li><span>Status</span><strong>Reserved</strong></li>
+                        <li><span>Location</span><strong>Lab / Shelf L3</strong></li>
+                    </ul>
+                    <a href="abtBook.html" class="button button1">About this book...</a>
+                </div>
+            </div>
+        </section>
 
-            <td>
-               <a href="" class="button button1">About this book...</a>
-            </td>
-                        <td class="whiteText">
-                <a>Availability=00 <p>(NOT SET)</p></a>
-            </td>
-        </tr>
-    </table>
+        <section class="card whiteText">
+            <h2>Barcode System Log</h2>
+            <table class="system-table">
+                <thead>
+                    <tr>
+                        <th>Barcode ID</th>
+                        <th>Book title</th>
+                        <th>Last action</th>
+                        <th>Student / Staff</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>LIB-2024-00021</td>
+                        <td>Book name 1</td>
+                        <td>Returned - 09:12 AM</td>
+                        <td>Ms. Reyes</td>
+                        <td><span class="tag">Available</span></td>
+                    </tr>
+                    <tr>
+                        <td>LIB-2024-00022</td>
+                        <td>Book name 2</td>
+                        <td>Checked out - 08:35 AM</td>
+                        <td>Student #4821</td>
+                        <td><span class="tag">Checked out</span></td>
+                    </tr>
+                    <tr>
+                        <td>LIB-2024-00023</td>
+                        <td>Science Explorers</td>
+                        <td>Reserved - 08:10 AM</td>
+                        <td>Library Desk</td>
+                        <td><span class="tag">Reserved</span></td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+    </div>
 </body>
 </html>
